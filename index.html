@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="VetCare — Clínica veterinária de alto padrão em São Paulo. Atendimento humanizado, cirurgias, exames e muito mais."/>
+  <title>VetCare — Clínica Veterinária</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/variables.css"/>
+  <link rel="stylesheet" href="css/base.css"/>
+  <link rel="stylesheet" href="css/navbar.css"/>
+  <link rel="stylesheet" href="css/hero.css"/>
+  <link rel="stylesheet" href="css/services.css"/>
+  <link rel="stylesheet" href="css/cases.css"/>
+  <link rel="stylesheet" href="css/components.css"/>
+</head>
+<body>
+
+  <!-- Sections -->
+  <div id="navbar-root"></div>
+  <div id="hero-root"></div>
+  <div id="services-root"></div>
+  <div id="cases-root"></div>
+  <div id="footer-root"></div>
+
+  <!-- Scripts -->
+  <script type="module">
+    // Load HTML partials
+    async function loadPartial(rootId, path) {
+      const root = document.getElementById(rootId);
+      const res  = await fetch(path);
+      root.innerHTML = await res.text();
+    }
+
+    await Promise.all([
+      loadPartial('navbar-root',   'sections/navbar.html'),
+      loadPartial('hero-root',     'sections/hero.html'),
+      loadPartial('services-root', 'sections/services.html'),
+      loadPartial('cases-root',    'sections/cases.html'),
+      loadPartial('footer-root',   'sections/footer.html'),
+    ]);
+
+    // Bootstrap JS after partials load
+    const { initNavbar } = await import('./js/navbar.js');
+    const { initReveal } = await import('./js/reveal.js');
+
+    initNavbar();
+    initReveal();
+  </script>
+
+</body>
+</html>

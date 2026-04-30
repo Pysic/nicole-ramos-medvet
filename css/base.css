@@ -1,0 +1,108 @@
+/* ── TYPOGRAPHY ── */
+h1 {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 5vw, 5rem);
+  line-height: 1.08;
+  color: var(--forest);
+}
+
+h1 em,
+h2 em {
+  color: var(--terracotta);
+  font-style: italic;
+}
+
+h2,
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  color: var(--forest);
+  line-height: 1.15;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+}
+
+/* ── SECTION COMMONS ── */
+.section-label {
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: .8rem;
+}
+
+.section-sub {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #5a6e66;
+  max-width: 520px;
+}
+
+/* ── BUTTONS ── */
+.btn-primary {
+  background: var(--forest);
+  color: var(--cream);
+  padding: .85rem 2rem;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  font-size: .95rem;
+  transition: all .25s;
+  box-shadow: 0 6px 24px rgba(45,74,62,.3);
+  display: inline-block;
+}
+
+.btn-primary:hover {
+  background: var(--charcoal);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--forest);
+  padding: .85rem 2rem;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  font-size: .95rem;
+  border: 2px solid var(--forest);
+  transition: all .25s;
+  display: inline-block;
+}
+
+.btn-secondary:hover {
+  background: var(--forest);
+  color: var(--cream);
+}
+
+.btn-white {
+  background: var(--white);
+  color: var(--terracotta);
+  padding: .9rem 2.4rem;
+  border-radius: var(--radius-pill);
+  font-weight: 700;
+  font-size: 1rem;
+  display: inline-block;
+  transition: all .25s;
+  box-shadow: 0 8px 28px rgba(0,0,0,.15);
+}
+
+.btn-white:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 36px rgba(0,0,0,.2);
+}
+
+/* ── REVEAL ANIMATION ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}

@@ -1,0 +1,145 @@
+.hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 7rem 4rem 4rem;
+  gap: 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 60% at 70% 50%, rgba(122,158,142,.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* Text side */
+.hero__text {
+  animation: fadeUp .9s ease both;
+}
+
+.hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  background: var(--light-sage);
+  color: var(--forest);
+  font-size: .8rem;
+  font-weight: 600;
+  letter-spacing: .8px;
+  text-transform: uppercase;
+  padding: .4rem 1rem;
+  border-radius: var(--radius-pill);
+  margin-bottom: 1.8rem;
+}
+
+.hero__badge::before {
+  content: '🐾';
+}
+
+.hero__title {
+  margin-bottom: 1.5rem;
+}
+
+.hero__sub {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #5a6e66;
+  max-width: 480px;
+  margin-bottom: 2.5rem;
+}
+
+.hero__buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Image side */
+.hero__image-wrap {
+  position: relative;
+  animation: fadeUp .9s .2s ease both;
+}
+
+.hero__img-main {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  box-shadow: var(--shadow-lg);
+}
+
+.hero__card {
+  position: absolute;
+  bottom: -1.5rem;
+  left: -2rem;
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.4rem;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  animation: fadeUp .9s .4s ease both;
+}
+
+.hero__card-icon {
+  font-size: 2rem;
+}
+
+.hero__card-text strong {
+  display: block;
+  font-size: .95rem;
+  color: var(--forest);
+}
+
+.hero__card-text span {
+  font-size: .8rem;
+  color: var(--sage);
+}
+
+.hero__stats {
+  position: absolute;
+  top: 2rem;
+  right: -1.5rem;
+  background: var(--terracotta);
+  color: var(--white);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.4rem;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(196,103,74,.4);
+}
+
+.hero__stats strong {
+  display: block;
+  font-size: 2rem;
+  font-family: var(--font-display);
+}
+
+.hero__stats span {
+  font-size: .78rem;
+  opacity: .85;
+}
+
+/* Animation */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 6rem 1.5rem 3rem;
+    gap: 2.5rem;
+  }
+
+  .hero__stats {
+    top: 1rem;
+    right: 1rem;
+  }
+}

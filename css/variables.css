@@ -1,0 +1,54 @@
+:root {
+  --cream: #F5F0E8;
+  --forest: #2D4A3E;
+  --sage: #7A9E8E;
+  --terracotta: #C4674A;
+  --gold: #D4A853;
+  --charcoal: #1E2B26;
+  --light-sage: #EBF2EE;
+  --white: #FDFCF9;
+
+  --font-display: 'Playfair Display', serif;
+  --font-body: 'DM Sans', sans-serif;
+
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 24px;
+  --radius-pill: 50px;
+
+  --shadow-sm: 0 4px 16px rgba(0,0,0,.08);
+  --shadow-md: 0 8px 32px rgba(0,0,0,.12);
+  --shadow-lg: 0 24px 64px rgba(45,74,62,.25);
+
+  --section-padding: 6rem 4rem;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--cream);
+  color: var(--charcoal);
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
