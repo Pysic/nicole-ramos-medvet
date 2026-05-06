@@ -1,5 +1,6 @@
 /* ── TESTIMONIALS ── */
 .testimonials {
+  display: none;
   padding: var(--section-padding);
   background: var(--light-sage);
 }

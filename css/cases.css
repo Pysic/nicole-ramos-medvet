@@ -87,7 +87,6 @@
   border-radius: var(--radius-md);
   overflow: hidden;
   position: relative;
-  cursor: pointer;
   background: var(--light-sage);
 }
 
@@ -109,22 +108,6 @@
   transform: scale(1.06);
 }
 
-.case-card__overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(30,43,38,.9) 0%, transparent 55%);
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  opacity: 0;
-  transition: opacity .35s;
-}
-
-.case-card:hover .case-card__overlay {
-  opacity: 1;
-}
-
 .case-card__info {
   position: absolute;
   bottom: 0;
@@ -144,13 +127,6 @@
 .case-card__info span {
   font-size: .78rem;
   color: rgba(255,255,255,.65);
-}
-
-.case-card__overlay p {
-  font-size: .85rem;
-  color: rgba(255,255,255,.8);
-  line-height: 1.55;
-  margin-top: .4rem;
 }
 
 .case-badge {
