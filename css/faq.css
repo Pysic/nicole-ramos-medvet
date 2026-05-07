@@ -1,0 +1,151 @@
+/* ═══════════════════════════════════════
+   FAQ — Veterinária a Domicílio
+   Compatível com as variáveis do projeto
+═══════════════════════════════════════ */
+
+.faq-section {
+  padding: 96px 24px;
+  background: var(--color-bg, #faf9f7);
+  position: relative;
+}
+
+.faq-container {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+/* Header */
+.faq-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.faq-eyebrow {
+  display: inline-block;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-accent, #b07d62);
+  margin-bottom: 16px;
+}
+
+.faq-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: var(--color-text, #1a1a1a);
+  line-height: 1.25;
+  margin: 0 0 16px;
+}
+
+.faq-subtitle {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1rem;
+  color: var(--color-text-muted, #666);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* List */
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-top: 1px solid var(--color-border, #e8e4de);
+}
+
+/* Item */
+.faq-item {
+  border-bottom: 1px solid var(--color-border, #e8e4de);
+  transition: background 0.2s;
+}
+
+.faq-item.open {
+  background: var(--color-surface, #f5f2ed);
+}
+
+/* Question button */
+.faq-question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 24px 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-text, #1a1a1a);
+  line-height: 1.5;
+  transition: color 0.2s;
+}
+
+.faq-question:hover {
+  color: var(--color-accent, #b07d62);
+}
+
+.faq-item.open .faq-question {
+  color: var(--color-accent, #b07d62);
+}
+
+/* Icon */
+.faq-icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  color: var(--color-accent, #b07d62);
+  transition: transform 0.3s ease;
+}
+
+.faq-item.open .faq-icon {
+  transform: rotate(180deg);
+}
+
+/* Answer */
+.faq-answer {
+  padding: 0 4px 24px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9375rem;
+  color: var(--color-text-muted, #555);
+  line-height: 1.7;
+}
+
+.faq-answer p {
+  margin: 0;
+}
+
+/* Acessibilidade */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Responsivo */
+@media (max-width: 640px) {
+  .faq-section {
+    padding: 64px 16px;
+  }
+
+  .faq-question {
+    font-size: 0.9375rem;
+    padding: 20px 0;
+  }
+
+  .faq-answer {
+    padding: 0 0 20px;
+    font-size: 0.875rem;
+  }
+}
