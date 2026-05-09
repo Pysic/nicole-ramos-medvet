@@ -136,6 +136,17 @@
   flex-direction: column;
   align-items: flex-end;
   gap: .6rem;
+  will-change: transform;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+@supports (-webkit-touch-callout: none) {
+  .whatsapp-float {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+  }
 }
 
 .whatsapp-float__tooltip {
@@ -184,6 +195,50 @@
 @keyframes waPulse {
   0%, 100% { box-shadow: 0 6px 24px rgba(37,211,102,.45); }
   50%       { box-shadow: 0 6px 40px rgba(37,211,102,.75); }
+}
+
+/* Mobile Safari fix for fixed positioning */
+@supports (-webkit-touch-callout: none) {
+  .whatsapp-float {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 999;
+    /* Prevent scroll-related jank on Safari iOS */
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  .whatsapp-float__btn {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  .whatsapp-float__btn:hover {
+    -webkit-transform: scale3d(1.1, 1.1, 1);
+    transform: scale3d(1.1, 1.1, 1);
+  }
+}
+
+@media (max-width: 768px) {
+  .whatsapp-float {
+    bottom: 1.5rem;
+    right: 1.5rem;
+  }
+
+  .whatsapp-float__btn {
+    width: 56px;
+    height: 56px;
+  }
+
+  .whatsapp-float__btn svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .whatsapp-float__tooltip {
+    display: none;
+  }
 }
 
 /* ── RESPONSIVE ── */
